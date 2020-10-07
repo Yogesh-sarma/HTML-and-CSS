@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Change</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        justify-content: center;
+        height: 100vh;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+
+    .btn{
+        font-size: 15px;
+        width: 250px;
+        height: 45px;
+        color: white;
+        border: 1px solid #777;
+        background: black;
+        border-radius: 20px;
+        padding: 5px 20px;
+    }
+
+    .btn:focus{
+        outline: 0;
+    }
+    </style>
+</head>
+<body>
+    <h1>BACKGROUND COLOR CHANGER!</h1>
+    <button class="btn" id="btn" onclick="changeBackgrnd()">CHANGE BACKGROUND</button>
+    <script>
+        myarr=['Tomato','DodgerBlue','MediumSeaGreen','Orange','LightGray','SlateBlue','Violet','Aquamarine','Crimson','DarkOliveGreen','LightSalmon','Teal']
+        
+        function changeBackgrnd()
+        {
+            let randInd= Math.floor(Math.random()* myarr.length);
+            document.body.style.backgroundColor= myarr[randInd];
+        }
+    </script>
+</body>
+</html>
