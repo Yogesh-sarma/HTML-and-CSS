@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Counter</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rgb(245, 107, 82);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        h1{
+            text-align: center;
+        }
+        .count{
+            border: 2px solid white;
+            width: 150px;
+            height: 180px;
+            display:flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        .realCount{
+            /* border: 1px solid black; */
+            color: white;            
+            font-size: 60px;
+            margin:0;
+        }
+        .btnWrapper{
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: space-around;  
+        }
+        .dec,.inc{
+            cursor: pointer;
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            height: 35px;
+            width: 35px;
+            font-size: 30px;
+            border-radius: 35px;
+            padding-bottom: 30px;
+            margin-top: 15px;
+        }
+        button:focus{
+            outline:0;
+        }
+        button:active{
+            background-color: rgb(182, 69, 50);
+        }
+    </style>
+</head>
+<body>
+    <h1>COUNTER</h1>
+    <div class="count">
+        <h1 class="realCount" id="realCount">0</h1>
+        <div class="btnWrapper">
+            <button class="dec" id="dec">-</button>
+            <button class="inc" id="inc">+</button>
+        </div>
+    </div>
+
+    <script>
+        const dec= document.getElementById('dec');
+        const inc= document.getElementById('inc');
+        const realCount= document.getElementById('realCount');
+        let num=0;
+        dec.addEventListener('click',()=>{
+            num--;
+            realCount.innerText=num;
+        });
+        inc.addEventListener('click',()=>{
+            num++;
+            realCount.innerText=num;
+        });
+    </script>
+</body>
+</html>
