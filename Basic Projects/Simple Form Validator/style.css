@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+:root{          /*custom variables in css and it has root scope, means u can use it anywhere*/
+    --success-color:#32e632;
+    --error-color:#d1220e;
+}
+
+*{
+    box-sizing: border-box; /*box sizing ppt allows us to specify width and height of the element including padding and border*/
+    /*actual height/width of an element=height/width + padding + border
+    but with box-sizing, we can fix the actual height/width.essentially defines how they r calculated.*/
+}
+
+body{
+    display: flex;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f9fafb;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;  /*vh- veiwport height.viewport means the entire browser size*/
+    margin: 0px;
+}
+
+.container{
+    background-color: #fff;
+    box-shadow: 0px 2px 5px rgba(0,0,0, 0.3);/*h-offset(req) v-offset(req) blur spread color*/
+    /*here only hoffset voffset and blur is given*/
+    border-radius: 5px;
+    width:400px;
+}
+h2{
+    text-align:center;
+    margin: 0 0 20px;
+}
+.form{
+    padding: 30px 40px;
+}
+
+.form-control{
+    padding-bottom: 20px;
+    margin-bottom:10px;     /*relative means relative to its original position*/
+    position: relative;     /*to have a child element as absolute, the parent has to be relative*/
+}
+
+.form-control label{
+    color: #777;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-control input{
+    border: 2px solid #f0f0f0;
+    border-radius: 5px;
+    display:block;
+    width:100%;
+    padding: 10px;
+    font-size:14px;
+}
+
+.form-control input:focus{ /*focus here means click on the text box*/
+    outline:0;
+    border:2px solid #777;
+}
+
+.form-control.success input{    /* on getting success class do this (u check manually by placing success word in the class)*/
+    border-color: var(--success-color);      /*accessing variables*/
+}
+
+.form-control.error input{  /* on getting failure class do this (u check manually by placing error word in the class)*/
+    border-color: var(--error-color);      /*accessing variables*/
+}
+
+.form-control small{
+    color: var(--error-color);
+    position: absolute;     /*absolute means it is positioned relative to the nearest ancestor,if no ancestor then it is relative to the document body and scrolls along with it.*/
+    bottom:0;
+    left:10px;
+    visibility: hidden;  /*do not want it to show initially*/
+}
+
+.form-control.error small{
+    visibility:visible;
+}
+
+button{
+    width:100%;
+    background-color: rgb(21, 142, 241);
+    color:whitesmoke;
+    padding:10px;
+    border:2px solid rgb(59, 160, 243);
+    border-radius: 4px;
+    display:block;
+    cursor: pointer;
+    font-size:16px;
+}
+
+
