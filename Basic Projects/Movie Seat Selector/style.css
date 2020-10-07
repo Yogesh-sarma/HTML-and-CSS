@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #242333;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    font-family: 'Lato','sans serif';
+    margin:0;
+}
+
+
+.movie-container{
+    margin: 20px 0;
+}
+.movie-container select{
+    background-color: #fff;
+    border:0;
+    border-radius: 5px;
+    font-size:15px;
+    margin-left:10px;
+    padding: 5px 15px 5px 15px;
+}
+
+
+
+.showcase{
+    background: rgb(0,0,0,0.1);
+    display: flex;
+    border-radius:5px;
+    padding: 5px 10px;
+    color: #777;
+    justify-content: space-between;
+}
+.showcase li{
+    list-style-type: none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:0 10px;
+}
+.showcase small{
+    padding: 3px;
+}
+.showcase .seat{
+    height:15px;
+    width:15px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+.showcase .seat:not(.occupied):hover
+{
+    cursor:default;
+    transform:scale(1);
+}
+
+
+
+.container{
+    border : 1px solid #777;
+    padding: 10px;
+    perspective: 1500px;
+}
+.screen{
+    height: 150px;
+    width: 100%;
+    background-color: rgb(247, 243, 243);
+    box-shadow: 0px 6px 10px  rgba(255, 255, 255, 0.7);
+    margin-bottom: 20px;
+    transform: rotateX(-45deg);
+}
+.row{
+    display: flex;
+}
+.seat{
+    background: white;
+    height:18px;
+    width:20px;
+    margin:3px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.seat.occupied{
+    background:rgb(119, 116, 116);
+}
+.seat.selected{
+    background: #028009;
+}
+.seat:not(.occupied):hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}
+.seat.occupied:hover{
+    cursor: default;
+    transform: scale(0.95);
+}
+.seat:nth-of-type(2){
+    margin-right:20px;
+}
+.gap{
+    height:20px;
+}
+
+
+
+.text span{
+    color:#03990a;
+}
+
+.textWrapper{   
+    text-align:center;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-direction: column
+}
+.textWrapper small{
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 15px;
+    visibility: hidden;    
+}
+.textWrapper.error small{    
+    visibility: visible;
+}
+.textWrapper button{
+    height: 30px;
+    width:100%;
+    font-size: 15px;
+    background-color: rgb(54, 175, 245);
+    color: white;
+    font-weight: bold;
+    border: 1px solid #777;
+}
